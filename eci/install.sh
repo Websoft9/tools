@@ -1,3 +1,7 @@
+#!/bin/bash
+export PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin
+clear
+
 # install ECI cli
 sudo bash -c "$(curl -s https://eci-release.oss-cn-beijing.aliyuncs.com/install.sh)"
 
