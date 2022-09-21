@@ -1,7 +1,10 @@
 ContainerGroupName: develop
 AutoMatchImageCache: "true"
+AutoCreateEip: "true"
 Container:
 - Name: nginx
   Image: nginx:latest
   Command: ["bash", "-c", "while true; do date; sleep 10; done"]
   ImagePullPolicy: IfNotPresent
+Memory: "16.0"
+Cpu: "4.0" 
