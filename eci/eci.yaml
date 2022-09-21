@@ -1,0 +1,7 @@
+ContainerGroupName: develop
+AutoMatchImageCache: "true"
+Container:
+- Name: nginx
+  Image: nginx:latest
+  Command: ["bash", "-c", "while true; do date; sleep 10; done"]
+  ImagePullPolicy: IfNotPresent
