@@ -10,4 +10,7 @@ eci ps -A
 
 # 删除容器
 eci rm c_id
+
+# 获取内网IP
+eci inspect c_id | jq -r .ContainerGroups[0].IntranetIp
 ```
