@@ -8,9 +8,12 @@ ECI 是容器服务器，可以将其绑定到 ECS，然后很方便的按需使
 * [eci OpenAPI](https://api.aliyun.com/#/?product=Eci&version=2018-08-08&api=CreateContainerGroup&params={}&tab=DOC&lang=JAVA)
 * [eci 命令行文档](https://help.aliyun.com/document_detail/186961.html)
 
-## To do
+## 功能
 
-* 自动删除容器能力
+* 实现 ECS上的 Nas 目录挂载到容器
+* 容器创建后的生命周期最为4小时
+* 应用镜像缓存，加快容器启动速度
+* 绑定公网 IP 地址
 
 ## 常用命令
 
