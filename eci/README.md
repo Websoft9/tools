@@ -10,7 +10,6 @@ ECI 是容器服务器，可以将其绑定到 ECS，然后很方便的按需使
 
 ## To do
 
-* 磁盘挂载
 * 自动删除容器能力
 
 ## 常用命令
@@ -31,3 +30,8 @@ eci inspect c_id | jq -r .ContainerGroups[0].IntranetIp
 # 获取公网IP
 eci inspect c_id | jq -r .ContainerGroups[0].InternetIp
 ```
+
+## 常见问题
+
+#### 如何挂载服务器目录至 ECI?
+无法直接挂载磁盘目录，故使用 nas 存储可以很方便挂载
