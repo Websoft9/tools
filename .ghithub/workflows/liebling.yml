@@ -1,0 +1,30 @@
+name: Update Theme liebling
+
+on: 
+  push:
+    paths: .github/workflows/liebling.yml
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@main
+        
+    - name: Update theme and Replace 
+      run: |
+        pwd
+        wget -qN https://github.com/eddiesigner/liebling/releases/download/v1.0.4/liebling.zip   -O liebling.zip
+        unzip -qo liebling.zip && mv `unzip -l liebling.zip | awk '{if(NR == 5){ print $4}}'` liebling && rm -rf liebling.zip liebling-*
+        cp -rR liebling content/themes && rm -rf liebling
+        sed -i 's,https://polyfill.io/v3/polyfill.min.js,https://libs.websoft9.com/Websoft9/css-js/polyfill.min.js,g' content/themes/liebling/default.hbs
+        ls
+        
+    - name: push
+      uses: github-actions-x/commit@v2.7
+      with:
+        github-token: ${{ secrets.WEBSOFT9PRIVATE_BLOG }}
+        push-branch: 'main'
+        commit-message: 'update'
+        force-add: 'true'
+        name: chendelin1982
+        email: chendelin1982@126.com 
